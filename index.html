@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blendy — Create Gooey SVG Shapes Online</title>
+    <meta
+      name="description"
+      content="Create fluid, gooey shapes by blending simple geometry together. Customize size, radius, and form, then export your creation as SVG or PNG."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blendy — Create Gooey SVG Shapes Online" />
+    <meta
+      property="og:description"
+      content="Create fluid, gooey shapes by blending simple geometry together. Customize size, radius, and form, then export your creation as SVG or PNG."
+    />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <script>
+      // Set the theme before first paint so there is no flash of the other one.
+      try {
+        var t = JSON.parse(localStorage.getItem("blendy.ui") || "{}").theme;
+        document.documentElement.dataset.theme = t === "dark" || t === "light" ? t : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
