@@ -13,7 +13,7 @@ export function Header() {
     <header className="header">
       <img className="logo" src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"} alt="Blendy" width={120} height={30} />
       <nav className="header-links">
-        <a className="icon-btn link-btn" href={LINKS.x} target="_blank" rel="noreferrer" aria-label="Blendy on X" data-tip="Blendy on X">
+        <a className="icon-btn link-btn" href={LINKS.x} target="_blank" rel="noreferrer" aria-label="Made by Pixelyokai" data-tip="Made by Pixelyokai">
           <XLogo />
         </a>
         <a className="icon-btn link-btn" href={LINKS.github} target="_blank" rel="noreferrer" aria-label="Source on GitHub" data-tip="Source on GitHub">
