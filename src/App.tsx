@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { Editor } from "./editor/Editor";
 import { Header } from "./editor/Header";
 import { SadIcon } from "./editor/ui/Icons";
@@ -11,19 +12,27 @@ export function App() {
   const narrow = useNarrow();
   useEffect(() => track("app_opened"), []);
 
-  if (!narrow) return <Editor />;
+  if (!narrow) return (
+    <>
+      <Editor />
+      <Analytics />
+    </>
+  );
   return (
-    <main className="app">
-      <div className="shell mobile">
-        <Header />
-        <div className="mobile-body">
-          <div className="mobile-card">
-            <SadIcon />
-            <p>We're sorry. Blendy is only available on desktop and laptop devices.</p>
+    <>
+      <main className="app">
+        <div className="shell mobile">
+          <Header />
+          <div className="mobile-body">
+            <div className="mobile-card">
+              <SadIcon />
+              <p>We're sorry. Blendy is only available on desktop and laptop devices.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Analytics />
+    </>
   );
 }
 
